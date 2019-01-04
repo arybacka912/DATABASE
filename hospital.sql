@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Thursday-January-03-2019   
+--  File created - Friday-January-04-2019   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table DEPARTMENTS
@@ -30,9 +30,12 @@
 	"LAST_NAME" VARCHAR2(50 BYTE), 
 	"ID_MANAGER" NUMBER(*,0), 
 	"SPECIALITY" VARCHAR2(100 BYTE)
-   ) SEGMENT CREATION DEFERRED 
+   ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
  NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 
    COMMENT ON COLUMN "DVF"."DOCTORS"."ID_DOCTOR" IS 'id doctor';
@@ -154,6 +157,14 @@ REM INSERTING into DVF.DEPARTMENTS
 SET DEFINE OFF;
 REM INSERTING into DVF.DOCTORS
 SET DEFINE OFF;
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (1,'Andrzej','Baran',100,'kardiolog');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (2,'Dorota','Olesza',101,'ginekolog');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (3,'Dawid','Najdul',102,'neurolog');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (4,'Patryk','Kowal',103,'ortopeda');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (100,'Pawel','Domagala',null,'kardiolog');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (101,'Daniela','Kozlowska',null,'ginekolog');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (102,'Kamil','Potra',null,'neurolog');
+Insert into DVF.DOCTORS (ID_DOCTOR,FIRST_NAME,LAST_NAME,ID_MANAGER,SPECIALITY) values (103,'Romuald','Trzeciak',null,'ortopeda');
 REM INSERTING into DVF.HOLIDAYS
 SET DEFINE OFF;
 REM INSERTING into DVF.PATIENTS
